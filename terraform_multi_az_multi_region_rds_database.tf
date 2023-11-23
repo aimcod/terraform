@@ -1,3 +1,91 @@
+# variables.tf
+variable "primary_region" {
+  description = "AWS primary region"
+  type        = string
+}
+
+variable "allocated_storage" {
+  description = "Allocated storage for the primary DB instance"
+  type        = number
+}
+
+variable "max_allocated_storage" {
+  description = "Enable Storage Autoscaling by providing a higher value than the previous one"
+  type = number
+}
+
+
+variable "db_identifier" {
+  description = "DB instance identifier"
+  type        = string
+}
+
+variable "storage_type" {
+  description = "Storage type for the primary DB instance"
+  type        = string
+}
+
+variable "engine" {
+  description = "Database engine type"
+  type        = string
+}
+
+variable "engine_version" {
+  description = "Database engine version"
+  type        = string
+}
+
+variable "instance_class" {
+  description = "DB instance class"
+  type        = string
+}
+
+variable "db_name" {
+  description = "Name of the database"
+  type        = string
+}
+
+variable "db_username" {
+  description = "Username for the database"
+  type        = string
+}
+
+variable "db_password" {
+  description = "Password for the database"
+  type        = string
+}
+
+variable "replica_count" {
+  description = "Number of replicas to create"
+  type        = number
+}
+
+variable "security_group_id" {
+  description = "ID of the security group for the primary DB instance"
+  type        = string
+}
+
+variable "subnet_group_name" {
+  description = "Name of the DB subnet group"
+  type        = string
+}
+
+variable "tag_name" {
+  description = "Name tag for the primary DB instance"
+  type        = string
+}
+
+variable "secondary_region" {
+  description = "AWS secondary region"
+  type        = string
+}
+
+variable "secondary_region_security_group_id" {
+  description = "ID of the security group for the secondary region"
+  type        = string
+}
+#####################################
+
 # main.tf
 
 provider "aws" {
